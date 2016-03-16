@@ -17,7 +17,7 @@ NodeController::NodeController()
 	stringNode.setValue("asdf");
 	intNode.setValue(99);
 	ints = new CTECArray<int>(5);
-	//numbers = new CTECList<int>();
+	numbers = new CTECList<int>();
 
 	stringArrayNode.setValue("Words in here");
 	otherArrayNode.setValue("linked node");
@@ -51,7 +51,9 @@ NodeController::~NodeController()
 
 void NodeController :: testLists()
 {
-	//numbers->addToFront(3);
-	//numbers->addToEnd();
-	//cout << "the test is to find end." << numbers->getFromIndex();
+    numbers->addToFront(3);
+    numbers->addToEnd();
+    cout << "End should be 8 and is: " << numbers->getEnd() << endl;
+    
+    cout << "Head should be 3 and is: " << numbers->getFront() << endl;
 }

@@ -40,7 +40,6 @@ for(int index = 0; index < size; index++)
 	this->head = firstNode;
 		}
 	}
-
 }
 /**
  * this destroys unused nodes int the array.
@@ -104,6 +103,70 @@ void CTECArray<Type> ::  set(int position,const Type& value)
 		}
 
 }
+
+/*
+ 1. check array2. point to head
+ 3. loop over till node is found
+ 4. return index if index or -1 not found
+ 
+ */
+ 
+template <class Type>
+int CTECArray<Type> :: indexOf(Type searchValue)
+{
+    assert(this->size > 0);
+    
+    ArrayNode<Type> * current = head;
+    int indexNotFound = -1;
+    
+    for(int index = 0; index < this->size; index++)
+    {
+        
+        if(current->getValue() == searchValue)
+        {
+            return index;
+        }
+        else
+        {
+            current = current->getValue;
+        }
+        
+    }
+    
+    return indexNotFound;
+}
+
+template <class Type>
+int CTECArray<Type> :: nextIndexOf(int startingIndex,Type searchValue)
+{
+    assert(this->size > 0);
+    aasert(startingIndex >= 0 && startingIndex < this->si);
+    
+    ArrayNode<Type> * current = head;
+    int indexNotFound = -1;
+    
+    for(int index = 0; index <startingIndex; index++)
+    {
+        current = current->getNext();
+    }
+    
+    for(int index = startingIndex; index < this->size; index++)
+    {
+        
+        if(current->getValue() == searchValue)
+        {
+            return index;
+        }
+        else
+        {
+            current = current->getValue;
+        }
+        
+    }
+    
+    return indexNotFound;
+}
+
 
 /**
  * this gets a value from the array

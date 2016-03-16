@@ -23,7 +23,7 @@ class NodeController
 {
 private:
 	CTECArray<int> * ints;
-	//CTECList<int> * numbers;
+	CTECList<int> * numbers;
 	Node<string> stringNode;
 
 	Node<int> intNode;
