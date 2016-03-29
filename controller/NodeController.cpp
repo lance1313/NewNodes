@@ -57,3 +57,9 @@ void NodeController :: testLists()
     
     cout << "Head should be 3 and is: " << numbers->getFront() << endl;
 }
+
+
+void NodeController :: sortData()
+{
+    
+}

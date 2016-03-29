@@ -25,6 +25,7 @@ private:
 	CTECArray<int> * ints;
 	CTECList<int> * numbers;
 	Node<string> stringNode;
+    void sortData();
 
 	Node<int> intNode;
 	ArrayNode<string> stringArrayNode;

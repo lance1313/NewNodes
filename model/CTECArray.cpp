@@ -205,25 +205,45 @@ void CTECArray<Type>:: selectionSort()
  * this gets a value from the array
  * <param> int position this is the spot in the array.
  */
-template <class Type>
-Type CTECArray<Type> ::  get(int position)
-{
-	//I'm out of bounds and need to do somthing about it.
-	assert(position < size && position >= 0);
-		ArrayNode<Type> * current = head;
-		for(int spot = 0; spot <= position; spot++)
-		{
-			//Not in the right spot go to next spot.
-			try
-			{
-				current = current->getNext();
-			}
+//template <class Type>
+//Type CTECArray<Type> ::  get(int position)
+//{
+//	//I'm out of bounds and need to do somthing about it.
+//	assert(position < size && position >= 0);
+//		ArrayNode<Type> * current = head;
+//		for(int spot = 0; spot <= position; spot++)
+//		{
+//			//Not in the right spot go to next spot.
+//			try
+//			{
+//				current = current->getNext();
+//			}
+//
+//			catch()
+//			{
+//				return current->getValue();
+//			}
+//		}
 
-			catch()
-			{
-				return current->getValue();
-			}
-		}
+    template <class Type>
+    Type CTECArray<Type> ::  get(int position)
+    {
+        //I'm out of bounds and need to do somthing about it.
+        assert(position < size && position >= 0);
+        ArrayNode<Type> * current = head;
+        for(int spot = 0; spot <= position; spot++)
+        {
+            //Not in the right spot go to next spot.
+            if(spot != position)
+            {
+                current = current->getNext();
+            }
+            
+            else
+            {
+                return current->getValue();
+            }
+        }
 
     }
 
