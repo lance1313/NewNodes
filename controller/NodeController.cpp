@@ -6,8 +6,10 @@
  */
 
 #include "NodeController.h"
-
+#include <stdlib.h>// allows accesss to rand() function for random #
 #include <iostream>
+
+
 using namespace std;
 /**construtor to initialize variables
  *
@@ -61,5 +63,34 @@ void NodeController :: testLists()
 
 void NodeController :: sortData()
 {
+    /*
+     Create a CtecList and array fill them with stuff(numbers)
+     start timer , sort stop timer, display info for list
+      start timer , sort stop timer, display info for array
+     */
+    CTECArray<int> randomNumberArray(5000);
+    CTECList<int> randomNumberList;
+    int myCPlusPlusArray[5000];
+    
+    for(int spot = 0; spot < 5000; spot++)
+    {
+        int myRandom = rand();
+        randomNumberArray.set(spot, myRandom);
+        randomNumberList.addToEnd(myRandom);
+        myCPlusPlusArray[spot] = myRandom;
+    }
+    
+    Timer sortTimer;
+    sortTimer.startTimer();
+    randomNumberArray.selectionSort();
+    sortTimer.stopTimer();
+    sortTimer.displayTimerInformation();
+    sortTimer.resetTimer();
+    
+    sortTimer.startTimer();
+    std::sort(std::begin(myCPlusPlusArray), std::end(myCPlusPlusArray));
+    sortTimer.stopTimer();
+    sortTimer.displayTimerInformation();
+    sortTimer.resetTimer();
     
 }
