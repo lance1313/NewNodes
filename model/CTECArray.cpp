@@ -132,8 +132,7 @@ int CTECArray<Type> :: indexOf(Type searchValue)
         }
         
     }
-    
-    return indexNotFound;
+       return indexNotFound;
 }
 
 template <class Type>
@@ -167,12 +166,21 @@ int CTECArray<Type> :: nextIndexOf(int startingIndex,Type searchValue)
     return indexNotFound;
 }
 
+template <class Type>
+void CTECArray<Type>:: swap(int indexOne, int indexTwo)
+{
+    assert(indexOne < size && indexTwo < size);
+    Type temp = get(indexOne);
+    set(indexOne, get(indexTwo));
+    set(indexTwo, temp);
+}
+
+
 
 /**
  * this gets a value from the array
  * <param> int position this is the spot in the array.
  */
-
 template <class Type>
 Type CTECArray<Type> ::  get(int position)
 {
@@ -182,18 +190,17 @@ Type CTECArray<Type> ::  get(int position)
 		for(int spot = 0; spot <= position; spot++)
 		{
 			//Not in the right spot go to next spot.
-			if(spot != position)
+			try
 			{
 				current = current->getNext();
 			}
 
-			else
+			catch()
 			{
 				return current->getValue();
 			}
 		}
 
-    return current->GetValue;
-}
+    }
 
 

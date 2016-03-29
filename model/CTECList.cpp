@@ -24,7 +24,7 @@ CTECList<Type>::~CTECList()
 
 	ArrayNode<Type> * head = new ArrayNode<Type>();
 	ArrayNode<Type> * tail = new ArrayNode<Type>();
-	ArrayNode<Type> * current = ArrayNode<Type>();
+	ArrayNode<Type> * current;
 	for(int index = 0;  index < size; index++)
 	{
 	ArrayNode<Type> * temp = current;
@@ -242,18 +242,19 @@ Type CTECList<Type>::getFromIndex(int index)
 template <class Type>
 void CTECList<Type>::addToFront(const Type& value)
 {
-	ArrayNode<Type> * newHead = ArrayNode<Type>();
-	ArrayNode<Type> * current = ArrayNode<Type>();
+	ArrayNode<Type> * newHead;
+	ArrayNode<Type> * current = new ArrayNode<Type>();
 
-	newHead = head;
+	
 
 	if(size ==0)
 	{
 		tail = head;
 	}
 
-	//current->setNext();
-
+    current->setValue(value);
+    current->setNext(head);
+newHead = head;
 
 
 	calculateSize();
@@ -262,14 +263,15 @@ void CTECList<Type>::addToFront(const Type& value)
  *add to the end of the list
  */
 template <class Type>
-void CTECList<Type>::addToEnd()
+void CTECList<Type>::addToEnd(const Type& value)
 {
-	ArrayNode<Type> * newTail = ArrayNode<Type>();
-	ArrayNode<Type> * current = ArrayNode<Type>();
-	tail= newTail;
-	current->setNext();
+    ArrayNode<Type> * newTail;
+	ArrayNode<Type> * current;
+    current->setValue(value);
+    current->setNext(tail);
+    tail= newTail;
 
-	this->calculateSize;
+	calculateSize();
 }
 /**
  *
@@ -306,6 +308,16 @@ void CTECList<Type>::addToIndex(int index,const Type& value)
 	}
 	this->calculateSize;
 
+}
+
+
+template <class Type>
+void CTECList<Type>:: swap(int indexOne, int indexTwo)
+{
+    assert(indexOne < size && indexTwo < size);
+    Type temp = getFromIndex(indexOne);
+    set(indexOne, getFromIndex(indexTwo));
+    set(indexTwo, temp);
 }
 
 template <class Type>

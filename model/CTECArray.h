@@ -20,6 +20,7 @@ public:
 	CTECArray();
     int indexOf(Type searchValue);
     int nextIndexOf(int startingIndex,Type searchValue);
+    void swap(int indexOne, int indexTwo);
 
 	virtual ~CTECArray();
 	int getSize();

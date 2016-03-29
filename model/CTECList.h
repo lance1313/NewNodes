@@ -30,9 +30,10 @@ public:
 	Type removeFromEnd();
 	Type removeFromIndex(int index);
 	void addToFront(const Type& value);
-	void addToEnd();
+	void addToEnd(const Type& value);
 	void addToIndex(int index,const Type& value);
 	void calculateSize();
+    void swap(int indexOne, int indexTwo);
 	//void add();
 	virtual ~CTECList();
 };

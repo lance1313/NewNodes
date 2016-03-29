@@ -52,7 +52,7 @@ NodeController::~NodeController()
 void NodeController :: testLists()
 {
     numbers->addToFront(3);
-    numbers->addToEnd();
+    numbers->addToEnd(8);
     cout << "End should be 8 and is: " << numbers->getEnd() << endl;
     
     cout << "Head should be 3 and is: " << numbers->getFront() << endl;
