@@ -27,6 +27,7 @@ public:
 	void set(int position,const Type& value);
 	Type get(int position);
 	CTECArray(int size);
+    void selectionSort();
 };
 
 #endif /* SRC_MODEL_CTECARRAY_H_ */

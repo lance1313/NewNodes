@@ -34,6 +34,7 @@ public:
 	void addToIndex(int index,const Type& value);
 	void calculateSize();
     void swap(int indexOne, int indexTwo);
+    void selectionSort();
 	//void add();
 	virtual ~CTECList();
 };
