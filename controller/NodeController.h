@@ -26,6 +26,10 @@ private:
 	CTECList<int> * numbers;
 	Node<string> stringNode;
     void sortData();
+    int * mergeData;
+    void doMergesort();
+    void mergesort(int data [], int size);
+    void merge(int data [], int sizene, int sizeTwo);
 
 	Node<int> intNode;
 	ArrayNode<string> stringArrayNode;

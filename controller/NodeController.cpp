@@ -85,12 +85,14 @@ void NodeController :: sortData()
     randomNumberArray.selectionSort();
     sortTimer.stopTimer();
     sortTimer.displayTimerInformation();
+    
     sortTimer.resetTimer();
     
     sortTimer.startTimer();
     std::sort(std::begin(myCPlusPlusArray), std::end(myCPlusPlusArray));
     sortTimer.stopTimer();
     sortTimer.displayTimerInformation();
+    
     sortTimer.resetTimer();
     
 }
