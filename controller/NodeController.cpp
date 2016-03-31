@@ -192,9 +192,9 @@ void NodeController:: swap(int first, int last)
 
 void NodeController:: doQuick()
 {
-    mergeData = new int[10000000000];
+    mergeData = new int[1000000000];
     
-    for(int spot = 0; spot < 100000000; spot++)
+    for(int spot = 0; spot < 1000000000; spot++)
     {
         int myRandom = rand();
         mergeData[spot] = myRandom;
