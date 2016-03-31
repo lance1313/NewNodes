@@ -30,6 +30,10 @@ private:
     void doMergesort();
     void mergesort(int data [], int size);
     void merge(int data [], int sizene, int sizeTwo);
+    void quicksort(int place1, int place2);
+    int partition(int place1, int place2);
+    void swap(int place1, int place2);
+    void doQuick();
 
 	Node<int> intNode;
 	ArrayNode<string> stringArrayNode;
