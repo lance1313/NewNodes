@@ -111,11 +111,11 @@ void NodeController::merge(int data[], int sizeOne, int sizeTwo)
     
     while ((copied1 < sizeOne) && (copied2 < sizeTwo))
     {
-        if(data[copied1] < (data + sizeOne) [copied2])
+        if(data[copied1] < (data + sizeOne) [copied2])//smaller goes in small half
         {
             temp[copied++] = data[copied1++];
         }
-        else{
+        else{// large  goes in large half
             temp[copied++] = (data + sizeOne)[copied2++];
         }
     }
@@ -130,6 +130,11 @@ void NodeController::merge(int data[], int sizeOne, int sizeTwo)
     {
         temp[copied++] = (data + sizeOne)[copied2];
     }
+    for(index = 0; index < sizeOne+ sizeTwo; index++)
+    {
+        data[index] = temp[index];
+    }
+    delete [] temp;
 }
 
 void NodeController :: testLists()
