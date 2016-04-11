@@ -9,8 +9,7 @@
 #include "Node.h"
 #include "TreeNode.hpp"
 
-namespace CTECData
-{
+
     template <class Type>
     TreeNode<Type> :: TreeNode() : Node<Type>()
     {
@@ -38,7 +37,45 @@ namespace CTECData
         this->parent = parent;
     }
     
-}
+    
+    template <class Type>
+    void TreeNode<Type> :: setLeftChild(TreeNode<Type> * leftChild)
+    {
+        leftChild->value;
+    }
+    
+    template <class Type>
+    void TreeNode<Type> :: setRightChild(TreeNode<Type> * rightChild)
+    {
+        rightChild->value;
+    }
+    
+    
+    template <class Type>
+    void TreeNode<Type> :: setParent(TreeNode<Type> * parent)
+    {
+        parent->value;
+    }
+    
+    template <class Type>
+    Type TreeNode<Type>:: getLeftChild()
+    {
+        return leftChild->getValue();
+    }
+    
+    template <class Type>
+    Type TreeNode<Type>:: getRightChild()
+    {
+        return rightChild->getValue();
+    }
+    
+    template <class Type>
+    Type TreeNode<Type> :: getParent()
+    {
+        return parent->getValue;
+    }
+    
+
 
 
 

@@ -14,8 +14,6 @@
 #include "Node.h"
 #include "TreeNode.hpp"
 
-namespace CTECData
-{
     template <class Type>
     class TreeNode : public Node<Type>
     {
@@ -32,14 +30,14 @@ namespace CTECData
         void setRightChild(TreeNode<Type> * rightChild);
         void setParent(TreeNode<Type> * parent);
         
-        TreeNode<Type> * geLeftChild();
+        TreeNode<Type> * getLeftChild();
         TreeNode<Type> * getRightChild();
         TreeNode<Type> * getParent();
         
     };
     
     
-}
+
 
 
 #endif /* TreeNode_hpp */

@@ -15,6 +15,7 @@
 		032024851C99DC0000250205 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0320247C1C99DC0000250205 /* Node.cpp */; };
 		032024861C99DC0000250205 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0320247E1C99DC0000250205 /* Timer.cpp */; };
 		03E58C6B1CBC1D2D00CC4E96 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E58C691CBC1D2D00CC4E96 /* TreeNode.cpp */; };
+		03E58C6E1CBC2D9600CC4E96 /* CTECBinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E58C6C1CBC2D9600CC4E96 /* CTECBinaryTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		0320247F1C99DC0000250205 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		03E58C691CBC1D2D00CC4E96 /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		03E58C6A1CBC1D2D00CC4E96 /* TreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
+		03E58C6C1CBC2D9600CC4E96 /* CTECBinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECBinaryTree.cpp; sourceTree = "<group>"; };
+		03E58C6D1CBC2D9600CC4E96 /* CTECBinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECBinaryTree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				0320247F1C99DC0000250205 /* Timer.h */,
 				03E58C691CBC1D2D00CC4E96 /* TreeNode.cpp */,
 				03E58C6A1CBC1D2D00CC4E96 /* TreeNode.hpp */,
+				03E58C6C1CBC2D9600CC4E96 /* CTECBinaryTree.cpp */,
+				03E58C6D1CBC2D9600CC4E96 /* CTECBinaryTree.hpp */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				03E58C6B1CBC1D2D00CC4E96 /* TreeNode.cpp in Sources */,
 				032024811C99DC0000250205 /* NodeRunner.cpp in Sources */,
 				032024821C99DC0000250205 /* ArrayNode.cpp in Sources */,
+				03E58C6E1CBC2D9600CC4E96 /* CTECBinaryTree.cpp in Sources */,
 				032024841C99DC0000250205 /* CTECList.cpp in Sources */,
 				032024831C99DC0000250205 /* CTECArray.cpp in Sources */,
 			);
