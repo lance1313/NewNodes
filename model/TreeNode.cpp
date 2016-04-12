@@ -58,21 +58,21 @@
     }
     
     template <class Type>
-    Type TreeNode<Type>:: getLeftChild()
+    TreeNode<Type> * TreeNode<Type>:: getLeftChild()
     {
-        return leftChild->getValue();
+        return leftChild;
     }
     
     template <class Type>
-    Type TreeNode<Type>:: getRightChild()
+    TreeNode<Type> *  TreeNode<Type>:: getRightChild()
     {
-        return rightChild->getValue();
+        return rightChild;
     }
     
     template <class Type>
-    Type TreeNode<Type> :: getParent()
+    TreeNode<Type> *  TreeNode<Type> :: getParent()
     {
-        return parent->getValue;
+        return parent;
     }
     
 

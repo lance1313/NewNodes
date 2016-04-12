@@ -14,7 +14,6 @@ class Timer
 	clock_t executionTime;
 public:
 	Timer();
-	virtual ~Timer();
 	void startTimer();
 	void stopTimer();
 	void resetTimer();
