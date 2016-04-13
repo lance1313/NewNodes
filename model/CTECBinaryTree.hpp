@@ -28,13 +28,14 @@ public:
     ~CTECBinaryTree();
     int getSize();
     int getHeight();
+    bool contains(Type value);
     bool insert(const Type& value);
     Type remove(const Type& value);
     bool isBalanced();
     TreeNode<Type> * getRoot();
-    void preorderTraversal(CTECBinaryTree<Type> * currentTree);
-    void inTraversal(CTECBinaryTree<Type> * currentTree);
-    void postorderTraversal(CTECBinaryTree<Type> * currentTree);
+    void preorderTraversal(TreeNode<Type> * currentTree);
+    void inorderTraversal(TreeNode<Type> * currentTree);
+    void postorderTraversal(TreeNode<Type> * currentTree);
     
     
 };
