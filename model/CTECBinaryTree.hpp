@@ -32,6 +32,10 @@ public:
     Type remove(const Type& value);
     bool isBalanced();
     TreeNode<Type> * getRoot();
+    void preorderTraversal(CTECBinaryTree<Type> * currentTree);
+    void inTraversal(CTECBinaryTree<Type> * currentTree);
+    void postorderTraversal(CTECBinaryTree<Type> * currentTree);
+    
     
 };
 

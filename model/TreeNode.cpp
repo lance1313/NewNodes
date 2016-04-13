@@ -70,7 +70,8 @@
     }
     
     template <class Type>
-    TreeNode<Type> *  TreeNode<Type> :: getParent()
+    TreeNode<Type> *
+TreeNode<Type> :: getParent()
     {
         return parent;
     }
