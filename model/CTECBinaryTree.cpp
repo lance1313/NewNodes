@@ -9,6 +9,49 @@
 #include "CTECBinaryTree.hpp"
 using namespace std;
 
+
+template <class Type>
+CTECBinaryTree<Type>::CTECBinaryTree()
+{
+    this->root = nullptr;
+    this->size = 0;
+    this->height = 0;
+    this->balanced = true;
+}
+
+template <class Type>
+int CTECBinaryTree<Type>:: getSize()
+{
+    size = 0;
+    calculateSize(root);
+    return size;
+    
+}
+
+template <class Type>
+int CTECBinaryTree<Type>:: getHeight()
+{
+    
+}
+
+template <class Type>
+void CTECBinaryTree<Type>:: calculateSize(TreeNode<Type> * currentNode)
+{
+    if(currentNode != nullptr)
+    {
+        calculateSize(currentNode->getLeftChild());
+        calculateSize(currentNode->getRightChild());
+        size++;
+    }
+}
+
+template <class Type>
+TreeNode<Type> * CTECBinaryTree<Type> :: getRoot()
+{
+    return root;
+}
+
+
 template <class Type>
  void CTECBinaryTree<Type>:: preorderTraversal(TreeNode<Type> * currentNode)
 {
@@ -78,3 +121,42 @@ bool CTECBinaryTree<Type>:: contains(Type value)
     
     return isInTree;
 }
+
+template <class Type>
+ bool CTECBinaryTree<Type>:: contains(Type value, CTECBinaryTree<Type> * currentTree)
+{
+    
+    
+    bool isInTree = false;
+    if(currentTree != nullptr)
+    {
+        if(currentTree->getRoot()->getValue() == value)
+        {
+            isInTree = true;
+        }
+        else
+        {
+            
+            if(value < currentTree->getRoot()->getValue())
+            {
+                isInTree = contains(value, currentTree->getRoot()->getLeftChild());
+            }
+            
+            else
+            {
+                isInTree = contains(value, currentTree->getRoot()->getRightChild());
+                
+            }
+
+        }
+        return isInTree;
+    }
+    
+}
+
+
+
+
+
+
+
