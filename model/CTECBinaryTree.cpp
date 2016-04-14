@@ -155,6 +155,47 @@ template <class Type>
 }
 
 
+template <class Type>
+bool CTECBinaryTree<Type>:: insert(const Type& value)
+{
+    if(contains(value))
+    {
+        return false;
+    }
+    
+    else
+    {
+        current = root;
+        while(current != nullptr)
+        {
+            parent = current;
+            if(current->value > )
+            {
+                
+            }
+            
+            else if()
+            {
+                
+            }
+            
+            else
+            {
+                
+            }
+            
+            
+        }
+        
+        if()
+            
+            else
+            {
+                
+            }
+    }
+    return true;
+}
 
 
 
