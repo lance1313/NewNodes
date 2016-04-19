@@ -158,6 +158,7 @@ template <class Type>
 template <class Type>
 bool CTECBinaryTree<Type>:: insert(const Type& value)
 {
+    Type current;
     if(contains(value))
     {
         return false;
@@ -195,6 +196,14 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
             }
     }
     return true;
+}
+
+template <class Type>
+Type CTECBinaryTree<Type>:: remove(const Type& value)
+{
+    
+    
+    
 }
 
 
