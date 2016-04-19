@@ -250,6 +250,30 @@ Type CTECBinaryTree<Type>:: remove(const Type& value)
     
 }
 
+template <class Type>
+TreeNode<Type> * CTECBinaryTree<Type>:: getRightMostChild(CTECBinaryTree<Type> leftSubTree)
+{
+    TreeNode<Type> * rightNode = leftSubTree->getRoot();
+    
+    while(rightNode->getRighthild() != nullptr)
+    {
+        rightNode = rightNode->getRightChild();
+    }
+    
+    return rightNode;
+}
+template <class Type>
+TreeNode<Type> * CTECBinaryTree<Type>:: getLeftMostChild(CTECBinaryTree<Type> rightSubTree)
+{
+    
+    TreeNode<Type> * leftNode = rightSubTree->getRoot();
+    while(leftNode->getRighthild() != nullptr)
+    {
+        leftNode = leftNode->getLeftChild();
+    }
+    
+    return leftNode;
+}
 
 
 
