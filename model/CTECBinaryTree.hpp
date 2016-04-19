@@ -20,17 +20,19 @@ private:
     TreeNode<Type> * root;
     int height;
     bool balanced;
-    void calculateSize(TreeNode<Type> * currentNode);
+    void calculateSize(TreeNode<Type> * currentNode);//Done
     bool contains(Type value, CTECBinaryTree<Type> * currentTree);//Done
+    TreeNode<Type> * getRightMostChild(CTECBinaryTree<Type> leftSubTree);
+    TreeNode<Type> * getLeftMostChild(CTECBinaryTree<Type> rightSubTree);
     
 public:
     
-    CTECBinaryTree();
+    CTECBinaryTree();//Done
     ~CTECBinaryTree();
-    int getSize();
+    int getSize();//Done
     int getHeight();
     bool contains(Type value);//Done
-    bool insert(const Type& value);
+    bool insert(const Type& value);//Done
     Type remove(const Type& value);
     bool isBalanced();
     TreeNode<Type> * getRoot();

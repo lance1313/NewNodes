@@ -211,44 +211,46 @@ Type CTECBinaryTree<Type>:: remove(const Type& value)
     CTECBinaryTree<Type> *temp; //pointer to delete the node
     if (value == NULL)
         cerr << "Error: The node to be deleted is NULL." << endl;
-    else if(value->llink == NULL && value->rlink == NULL)
+    else if(value->getLeftChild == NULL && value->getRightChild == NULL)
     {
         temp = value;
         value = NULL;
         delete temp;
     }
-    else if(value->llink == NULL)
+    else if(value->getLeftChild == NULL)
     {
         temp = value;
-        value = temp->rlink;
+        value = temp->getRightChild;
         delete temp;
     }
-    else if(value->rlink == NULL)
+    else if(value->getRightChild == NULL)
     {
         temp = value;
-        value = temp->llink;
+        value = temp->getLeftChild;
         delete temp;
     }
     else
     {
-        current = value->llink;
+        current = value->getLeftChild;
         trailCurrent = NULL;
-        while (current->rlink != NULL)
+        while (current->getRightChild != NULL)
         {
             trailCurrent = current;
-            current = current->rlink;
+            current = current->getRightChild;
         }//end while
         value->info = current->info;
         if (trailCurrent == NULL) //current did not move;
             //current == p->llink; adjust p
-            value->llink = current->llink;
+            value->getLeftChild = current->getLeftChild;
         else
-            trailCurrent->rlink = current->llink;
+            trailCurrent->getRightChild = current->getLeftChild;
         delete current;
     }//end else
     
     
 }
+
+
 
 
 
