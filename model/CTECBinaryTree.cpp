@@ -158,7 +158,6 @@ template <class Type>
 template <class Type>
 bool CTECBinaryTree<Type>:: insert(const Type& value)
 {
-    Type current;
     if(contains(value))
     {
         return false;
@@ -166,42 +165,87 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
     
     else
     {
-        current = root;
-        while(current != nullptr)
-        {
-            parent = current;
-            if(current->value > )
-            {
-                
-            }
-            
-            else if()
-            {
-                
-            }
-            
-            else
-            {
-                
-            }
-            
-            
-        }
+        CTECBinaryTree<Type> * current = root; //pointer to traverse the tree
+        CTECBinaryTree<Type> * trailNode; //pointer behind current
         
-        if()
-            
-            else
+        if(root == nullptr)
+        {
+            root = new TreeNode<Type>(value);
+        }
+        else
+        {
+            while (current != NULL)
             {
+                trailNode = current;
+                if (current->getValue() < value)
+                {
+                    current = current->getRightChild();
+                }
+                else
+                {
+                    current = current->getLeftChild();
+                }
                 
+        }
+            
+            if(trailNode->getValue() > value)
+            {
+                TreeNode<Type> * insertNode = new TreeNode<Type>(value,trailNode);
+                trailNode->setLeftChild();
             }
+        
+        
     }
-    return true;
+    
+        return true;
+    
+    }//end insert
 }
+
 
 template <class Type>
 Type CTECBinaryTree<Type>:: remove(const Type& value)
 {
-    
+    CTECBinaryTree<Type> *current;//pointer to traverse the tree
+    CTECBinaryTree<Type> *trailCurrent; //pointer behind current
+    CTECBinaryTree<Type> *temp; //pointer to delete the node
+    if (value == NULL)
+        cerr << "Error: The node to be deleted is NULL." << endl;
+    else if(value->llink == NULL && value->rlink == NULL)
+    {
+        temp = value;
+        value = NULL;
+        delete temp;
+    }
+    else if(value->llink == NULL)
+    {
+        temp = value;
+        value = temp->rlink;
+        delete temp;
+    }
+    else if(value->rlink == NULL)
+    {
+        temp = value;
+        value = temp->llink;
+        delete temp;
+    }
+    else
+    {
+        current = value->llink;
+        trailCurrent = NULL;
+        while (current->rlink != NULL)
+        {
+            trailCurrent = current;
+            current = current->rlink;
+        }//end while
+        value->info = current->info;
+        if (trailCurrent == NULL) //current did not move;
+            //current == p->llink; adjust p
+            value->llink = current->llink;
+        else
+            trailCurrent->rlink = current->llink;
+        delete current;
+    }//end else
     
     
 }
