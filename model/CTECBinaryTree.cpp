@@ -123,7 +123,7 @@ bool CTECBinaryTree<Type>:: contains(Type value)
 }
 
 template <class Type>
- bool CTECBinaryTree<Type>:: contains(Type value, CTECBinaryTree<Type> * currentTree)
+ bool CTECBinaryTree<Type>:: contains(Type value, TreeNode<Type> * currentTree)
 {
     
     
@@ -209,6 +209,7 @@ Type CTECBinaryTree<Type>:: remove(const Type& value)
     CTECBinaryTree<Type> *current;//pointer to traverse the tree
     CTECBinaryTree<Type> *trailCurrent; //pointer behind current
     CTECBinaryTree<Type> *temp; //pointer to delete the node
+    assert(value != nullptr);
     if (value == NULL)
         cerr << "Error: The node to be deleted is NULL." << endl;
     else if(value->getLeftChild == NULL && value->getRightChild == NULL)
@@ -251,9 +252,9 @@ Type CTECBinaryTree<Type>:: remove(const Type& value)
 }
 
 template <class Type>
-TreeNode<Type> * CTECBinaryTree<Type>:: getRightMostChild(CTECBinaryTree<Type> leftSubTree)
+TreeNode<Type> * CTECBinaryTree<Type>:: getRightMostChild(TreeNode<Type> leftSubTree)
 {
-    TreeNode<Type> * rightNode = leftSubTree->getRoot();
+    TreeNode<Type> * rightNode = leftSubTree;
     
     while(rightNode->getRighthild() != nullptr)
     {
@@ -263,10 +264,10 @@ TreeNode<Type> * CTECBinaryTree<Type>:: getRightMostChild(CTECBinaryTree<Type> l
     return rightNode;
 }
 template <class Type>
-TreeNode<Type> * CTECBinaryTree<Type>:: getLeftMostChild(CTECBinaryTree<Type> rightSubTree)
+TreeNode<Type> * CTECBinaryTree<Type>:: getLeftMostChild(TreeNode<Type> rightSubTree)
 {
     
-    TreeNode<Type> * leftNode = rightSubTree->getRoot();
+    TreeNode<Type> * leftNode = rightSubTree;
     while(leftNode->getRighthild() != nullptr)
     {
         leftNode = leftNode->getLeftChild();
