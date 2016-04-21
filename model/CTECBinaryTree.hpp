@@ -24,7 +24,7 @@ private:
     bool contains(Type value, TreeNode<Type> * currentTree);//Done
     TreeNode<Type> * getRightMostChild(TreeNode<Type> leftSubTree);
     TreeNode<Type> * getLeftMostChild(TreeNode<Type> rightSubTree);
-    void remove(TreeNode<Type> nodeToBeRemoved());
+    void remove(TreeNode<Type> * nodeToBeRemoved);
     
 public:
     

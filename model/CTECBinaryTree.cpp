@@ -247,9 +247,56 @@ void CTECBinaryTree<Type>:: remove(const Type& value)
 }
 
 template <class Type>
-void CTECBinaryTree<Type>:: remove()
+void CTECBinaryTree<Type>:: remove(TreeNode<Type> * nodeToBeRemoved)
 {
-    
+    CTECBinaryTree<Type> * current;//pointer to traverse the tree
+    CTECBinaryTree<Type> * trailCurrent; //pointer behind current
+    CTECBinaryTree<Type> * temp; //pointer to delete the node
+    if(nodeToBeRemoved == nullptr)
+    {
+        cerr << "" << endl;
+    }
+    else if(nodeToBeRemoved->getLeftChld() == nullptr &&
+            nodeToBeRemoved->getRightChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = nullptr;
+        delete temp;
+    }
+    else if(nodeToBeRemoved->getLeftChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = temp->getRighthild();
+        delete temp;
+    }
+    else if(nodeToBeRemoved->getRightChild() == nullptr)
+    {
+        temp = nodeToBeRemoved;
+        nodeToBeRemoved = temp->getLeftChild();
+        delete temp;
+    }
+    else
+    {
+        current = nodeToBeRemoved->getLeftChild();
+        trailCurrent = nullptr;
+        
+        while(current->getRightChild != nullptr)
+        {
+            trailCurrent = current;
+            current = current->getRightChild();
+        }
+        nodeToBeRemoved->setValue(current->Value());//swap nodeToBeRemoved with bottom right child and then deletes
+        if(trailCurrent == nullptr)
+        {
+            nodeToBeRemoved->setLeftChild(current->getLeftChild());
+        }
+        
+        else
+        {
+            trailCurrent->setRightChild(current->getLeftChild());
+        }
+        delete current;
+    }
 }
 
 template <class Type>
