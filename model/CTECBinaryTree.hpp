@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "TreeNode.cpp"
+#include "TreeNode.hpp"
 
 template <class Type>
 class CTECBinaryTree

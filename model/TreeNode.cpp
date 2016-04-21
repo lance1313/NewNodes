@@ -11,7 +11,7 @@
 
 
     template <class Type>
-    TreeNode<Type> :: TreeNode() : Node<Type>()
+TreeNode<Type> :: TreeNode() : Node<Type>()
     {
         this->leftChild = nullptr;
         this->righthild = nullptr;
@@ -22,7 +22,7 @@
     TreeNode<Type> :: TreeNode(const Type& value) : Node<Type>(value)
     {
         this->leftChild = nullptr;
-        this->righthild = nullptr;
+        this->rightChild = nullptr;
         this->parent = nullptr;
         
         this->setValue(value);
@@ -33,7 +33,7 @@
     TreeNode<Type> :: TreeNode(const Type& value, TreeNode<Type> * parent) : Node<Type>(value)
     {
         this->leftChild = nullptr;
-        this->righthild = nullptr;
+        this->rightChild = nullptr;
         this->parent = parent;
     }
     

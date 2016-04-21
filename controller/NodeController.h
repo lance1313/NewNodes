@@ -16,6 +16,7 @@
 #include "../model/Timer.h"
 #include "../model/CTECList.h"
 #include "../model/CTECList.cpp"
+#include "../Model/CTECBinaryTree.cpp"
 
 using namespace std;
 
@@ -39,6 +40,8 @@ private:
 	ArrayNode<string> stringArrayNode;
 	ArrayNode<string> otherArrayNode;
 	Timer arrayTimer;
+    
+    void tryTree();
 public:
 	NodeController();
 	void start();

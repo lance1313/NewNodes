@@ -31,17 +31,18 @@ NodeController::NodeController()
  */
 void NodeController :: start()
 {
-	arrayTimer.startTimer();
-	for(int index = 0; index < ints->getSize(); index++)
-	{
-		ints->set(index, (index *23));
-	}
-	for(int index =ints->getSize()-1; index >= 0; index--)
-	{
-		cout << "the contents of ints is " << index << " are: " << ints->get(index) << endl;
-	}
-	arrayTimer.stopTimer();
-	arrayTimer.displayTimerInformation();
+//	arrayTimer.startTimer();
+//	for(int index = 0; index < ints->getSize(); index++)
+//	{
+//		ints->set(index, (index *23));
+//	}
+//	for(int index =ints->getSize()-1; index >= 0; index--)
+//	{
+//		cout << "the contents of ints is " << index << " are: " << ints->get(index) << endl;
+//	}
+//	arrayTimer.stopTimer();
+//	arrayTimer.displayTimerInformation();
+    tryTree();
 }
 
 
@@ -49,6 +50,25 @@ NodeController::~NodeController()
 {
 
 
+}
+
+void NodeController:: tryTree()
+{
+    CTECBinaryTree<int> firstTree;
+    firstTree.insert(13);
+    firstTree.insert(-42);
+    firstTree.insert(3);
+    firstTree.insert(846);
+    
+    cout << "check contains" << endl;
+    cout << firstTree.contains(3.5) << endl;
+    
+    cout <<"Let's look at the tree." << endl;
+    firstTree.inorderTraversal(firstTree.getRoot());
+    cout <<"\nLet's look at the tree." << endl;
+    firstTree.preorderTraversal(firstTree.getRoot());
+    cout <<"\nLet's look at the tree." << endl;
+    firstTree.postorderTraversal(firstTree.getRoot());
 }
 
 void NodeController:: doMergesort()

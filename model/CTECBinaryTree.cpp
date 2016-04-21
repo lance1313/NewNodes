@@ -20,6 +20,12 @@ CTECBinaryTree<Type>::CTECBinaryTree()
 }
 
 template <class Type>
+CTECBinaryTree<Type>::~CTECBinaryTree()
+{
+    
+}
+
+template <class Type>
 int CTECBinaryTree<Type>:: getSize()
 {
     size = 0;
@@ -130,21 +136,21 @@ template <class Type>
     bool isInTree = false;
     if(currentTree != nullptr)
     {
-        if(currentTree->getRoot()->getValue() == value)
+        if(currentTree->getParent()->getValue() == value)
         {
             isInTree = true;
         }
         else
         {
             
-            if(value < currentTree->getRoot()->getValue())
+            if(value < currentTree->getParent()->getValue())
             {
-                isInTree = contains(value, currentTree->getRoot()->getLeftChild());
+                isInTree = contains(value, currentTree->getParent()->getLeftChild());
             }
             
             else
             {
-                isInTree = contains(value, currentTree->getRoot()->getRightChild());
+                isInTree = contains(value, currentTree->getParent()->getRightChild());
                 
             }
 
@@ -165,8 +171,8 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
     
     else
     {
-        CTECBinaryTree<Type> * current = root; //pointer to traverse the tree
-        CTECBinaryTree<Type> * trailNode; //pointer behind current
+        TreeNode<Type> * current = root; //pointer to traverse the tree
+        TreeNode<Type> * trailNode; //pointer behind current
         
         if(root == nullptr)
         {
