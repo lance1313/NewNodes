@@ -204,15 +204,14 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
 
 
 template <class Type>
-Type CTECBinaryTree<Type>:: remove(const Type& value)
+void CTECBinaryTree<Type>:: remove(const Type& value)
 {
     CTECBinaryTree<Type> *current;//pointer to traverse the tree
     CTECBinaryTree<Type> *trailCurrent; //pointer behind current
     CTECBinaryTree<Type> *temp; //pointer to delete the node
     assert(value != nullptr);
-    if (value == NULL)
-        cerr << "Error: The node to be deleted is NULL." << endl;
-    else if(value->getLeftChild == NULL && value->getRightChild == NULL)
+    
+     if(value->getLeftChild == NULL && value->getRightChild == NULL)
     {
         temp = value;
         value = NULL;

@@ -24,6 +24,7 @@ private:
     bool contains(Type value, TreeNode<Type> * currentTree);//Done
     TreeNode<Type> * getRightMostChild(TreeNode<Type> leftSubTree);
     TreeNode<Type> * getLeftMostChild(TreeNode<Type> rightSubTree);
+    void remove(TreeNode<Type> nodeToBeRemoved);
     
 public:
     
@@ -33,7 +34,7 @@ public:
     int getHeight();
     bool contains(Type value);//Done
     bool insert(const Type& value);//Done
-    Type remove(const Type& value);
+    void remove(const Type& value);
     bool isBalanced();
     TreeNode<Type> * getRoot();
     void preorderTraversal(TreeNode<Type> * currentTree);//Done
