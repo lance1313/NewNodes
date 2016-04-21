@@ -155,8 +155,9 @@ template <class Type>
             }
 
         }
-        return isInTree;
+        
     }
+    return isInTree;
     
 }
 
@@ -197,7 +198,7 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
             if(trailNode->getValue() > value)
             {
                 TreeNode<Type> * insertNode = new TreeNode<Type>(value,trailNode);
-                trailNode->setLeftChild();
+                trailNode->setLeftChild(insertNode);
             }
         
         

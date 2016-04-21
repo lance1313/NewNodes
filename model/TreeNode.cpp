@@ -6,7 +6,7 @@
 //  Copyright © 2016 CTEC. All rights reserved.
 //
 
-#include "Node.h"
+
 #include "TreeNode.hpp"
 
 
@@ -37,17 +37,17 @@ TreeNode<Type> :: TreeNode() : Node<Type>()
         this->parent = parent;
     }
     
-    
+
     template <class Type>
     void TreeNode<Type> :: setLeftChild(TreeNode<Type> * leftChild)
     {
-        leftChild->value;
+        this->leftChild = leftChild;
     }
     
     template <class Type>
     void TreeNode<Type> :: setRightChild(TreeNode<Type> * rightChild)
     {
-        rightChild->value;
+        this->rightChild = rightChild;
     }
     
     

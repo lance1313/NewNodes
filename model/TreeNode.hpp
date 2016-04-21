@@ -9,11 +9,10 @@
 #ifndef TreeNode_hpp
 #define TreeNode_hpp
 
-#include <stdio.h>
 
 #include "Node.h"
-#include "TreeNode.hpp"
-#include "TreeNode.cpp"
+
+
 
     template <class Type>
     class TreeNode : public Node<Type>
