@@ -206,47 +206,49 @@ bool CTECBinaryTree<Type>:: insert(const Type& value)
 template <class Type>
 void CTECBinaryTree<Type>:: remove(const Type& value)
 {
-    CTECBinaryTree<Type> *current;//pointer to traverse the tree
-    CTECBinaryTree<Type> *trailCurrent; //pointer behind current
-    CTECBinaryTree<Type> *temp; //pointer to delete the node
-    assert(value != nullptr);
-    
-     if(value->getLeftChild == NULL && value->getRightChild == NULL)
+    CTECBinaryTree<Type> * current;//pointer to traverse the tree
+    CTECBinaryTree<Type> * trailCurrent; //pointer behind current
+    CTECBinaryTree<Type> * temp; //pointer to delete the node
+   
+    if(!contains(value))
     {
-        temp = value;
-        value = NULL;
-        delete temp;
+        return;
     }
-    else if(value->getLeftChild == NULL)
-    {
-        temp = value;
-        value = temp->getRightChild;
-        delete temp;
-    }
-    else if(value->getRightChild == NULL)
-    {
-        temp = value;
-        value = temp->getLeftChild;
-        delete temp;
-    }
-    else
-    {
-        current = value->getLeftChild;
-        trailCurrent = NULL;
-        while (current->getRightChild != NULL)
+    else{
+        current =root;
+        trailCurrent = root;
+        while(current != nullptr & current->getValue() != value)
         {
             trailCurrent = current;
-            current = current->getRightChild;
-        }//end while
-        value->info = current->info;
-        if (trailCurrent == NULL) //current did not move;
-            //current == p->llink; adjust p
-            value->getLeftChild = current->getLeftChild;
-        else
-            trailCurrent->getRightChild = current->getLeftChild;
-        delete current;
-    }//end else
+            if(current->getValue() > value)
+            {
+                current = current->getLeftChild();
+            }
+            else
+            {
+                current = current->getRightChild();
+            }
+        }
+        if(current == root)
+        {
+            remove(root);
+        }
+        else if(trailCurrent->getValue() > value)
+        {
+            remove(trailCurrent->getLeftChild());
+        }
+                   else
+            {
+                       remove(trailCurrent->getRightChild());
+                   }
+    }
     
+    
+}
+
+template <class Type>
+void CTECBinaryTree<Type>:: remove()
+{
     
 }
 
