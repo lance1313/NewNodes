@@ -25,7 +25,7 @@ public:
     CTECGraph();
     ~CTECGraph();
     
-    void addVertiex(const Type& value);
+    void addVertex(const Type& value);
     void addEdge(int source, int target);
     void remveEdge(int source,int taget);
     Type& operator [] (int vertex);//change value

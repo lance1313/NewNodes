@@ -7,3 +7,31 @@
 //
 
 #include "CTECGraph.hpp"
+
+
+template <class Type>
+const int  CTECGraph<Type> :: MAXIMUM;
+
+template <class Type>
+void CTECGraph<Type>:: addVertex(const Type& value)
+{
+    assert(size() < MAXIMUM);
+    int newVertexNumber = manyVertices;
+    manyVertices++;
+    for(int otherVertexNumber = 0; otherVertexNumber < manyVertices; otherVertexNumber++)
+    {
+        adjecencyMatrix[otherVertexNumber] [newVertexNumber] = false;
+         adjecencyMatrix[newVertexNumber] [otherVertexNumber] = false;
+        
+    }
+    labels[newVertexNumber] = value;
+    
+}
+
+template <class Type>
+void CTECGraph<Type>:: addEdge(int source, int target)
+{
+    
+}
+
+
