@@ -10,6 +10,7 @@
 #define CTECGraph_hpp
 
 #include <stdio.h>
+#include <set>
 
 
 template <class Type>
@@ -24,7 +25,14 @@ public:
     CTECGraph();
     ~CTECGraph();
     
-    
+    void addVertiex(const Type& value);
+    void addEdge(int source, int target);
+    void remveEdge(int source,int taget);
+    Type& operator [] (int vertex);//change value
+    Type operator [] (int vertex) const;//copy value
+    int size();
+    bool isEdge(int source, int target);
+    std::set<int> neighbors(int vertex) const;
 };
 
 #endif /* CTECGraph_hpp */
