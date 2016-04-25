@@ -27,7 +27,7 @@ public:
     
     void addVertex(const Type& value);
     void addEdge(int source, int target);
-    void remveEdge(int source,int taget);
+    void removeEdge(int source,int taget);
     Type& operator [] (int vertex);//change value
     Type operator [] (int vertex) const;//copy value
     int size();
