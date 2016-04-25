@@ -45,4 +45,36 @@ bool CTECGraph<Type>:: isEdge(int source, int target) const
     return isAnEdge;
 }
 
+template <class Type>
+Type& CTECGraph<Type> :: operator[](int vertex)
+{
+    assert(vertex < size());
+    
+    return labels[vertex];
+}
+
+template <class Type>
+Type CTECGraph<Type> :: operator[](int vertex) const
+{
+    assert(vertex < size());
+    
+    return labels[vertex];
+}
+
+template <class Type>
+std::set<int> CTECGraph<Type>:: neighbors(int vertex) const
+{
+    assert(vertex < size());
+    std::set<int> vertexNeighbors;
+    
+    for(int index = 0; index < size(); index++)
+        {
+            if(adjecencyMatrix[vertex][index])
+            {
+                vertexNeighbors.insert(index);
+            }
+        }
+        return vertexNeighbors;
+}
+
 
