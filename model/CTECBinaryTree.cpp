@@ -162,6 +162,7 @@ template <class Type>
 }
 
 
+
 template <class Type>
 bool CTECBinaryTree<Type>:: insert(const Type& value)
 {
