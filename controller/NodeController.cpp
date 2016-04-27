@@ -71,6 +71,11 @@ void NodeController:: tryTree()
     firstTree.postorderTraversal(firstTree.getRoot());
 }
 
+void NodeController::tryGraph()
+{
+    
+}
+
 void NodeController:: doMergesort()
 {
     mergeData = new int[500000];
@@ -98,6 +103,8 @@ void NodeController:: doMergesort()
     delete [] mergeData;
     
 }
+
+
 
 void NodeController:: mergesort(int data[], int size)
 {

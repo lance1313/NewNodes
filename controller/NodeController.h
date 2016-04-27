@@ -42,6 +42,7 @@ private:
 	Timer arrayTimer;
     
     void tryTree();
+    void tryGraph();
 public:
 	NodeController();
 	void start();
