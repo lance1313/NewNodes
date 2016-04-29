@@ -16,6 +16,26 @@ template <class Type>
 const int  CTECGraph<Type> :: MAXIMUM;
 
 template <class Type>
+int CTECGraph<Type>:: size() const
+{
+    return manyVertices;
+}
+
+template <class Type>
+CTECGraph<Type> :: ~CTECGraph()
+{
+    
+}
+
+template <class Type>
+CTECGraph<Type> :: CTECGraph()
+{
+    
+}
+
+
+
+template <class Type>
 void CTECGraph<Type>:: addVertex(const Type& value)
 {
     assert(size() < MAXIMUM);
@@ -103,8 +123,8 @@ void CTECGraph<Type>:: depthFirstTraversal(CTECGraph<Type> currentGraph, int ver
     std::set<int> connections = currentGraph.neighbors(vertex);
     std::set<int> :: iterator setIterator;
     
-    markedVertices[vertex] << true;
-    cout << currentGraph[vertex] << endl;
+    markedVertices[vertex] = true;
+    cout << currentGraph[vertex]<< ","  << endl;
     for(setIterator = connections.begin(); setIterator != connections.end();setIterator++)
     {
         if(!markedVertices[*setIterator])

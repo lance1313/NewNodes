@@ -17,6 +17,7 @@
 #include "../model/CTECList.h"
 #include "../model/CTECList.cpp"
 #include "../Model/CTECBinaryTree.cpp"
+#include "../Model/CTECGraph.hpp"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ private:
     void swap(int place1, int place2);
     void doQuick();
 
+    
 	Node<int> intNode;
 	ArrayNode<string> stringArrayNode;
 	ArrayNode<string> otherArrayNode;

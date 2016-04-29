@@ -31,17 +31,17 @@ NodeController::NodeController()
  */
 void NodeController :: start()
 {
-//	arrayTimer.startTimer();
-//	for(int index = 0; index < ints->getSize(); index++)
-//	{
-//		ints->set(index, (index *23));
-//	}
-//	for(int index =ints->getSize()-1; index >= 0; index--)
-//	{
-//		cout << "the contents of ints is " << index << " are: " << ints->get(index) << endl;
-//	}
-//	arrayTimer.stopTimer();
-//	arrayTimer.displayTimerInformation();
+	arrayTimer.startTimer();
+	for(int index = 0; index < ints->getSize(); index++)
+	{
+		ints->set(index, (index *23));
+	}
+	for(int index =ints->getSize()-1; index >= 0; index--)
+	{
+		cout << "the contents of ints is " << index << " are: " << ints->get(index) << endl;
+	}
+	arrayTimer.stopTimer();
+	arrayTimer.displayTimerInformation();
     tryTree();
 }
 
@@ -73,7 +73,10 @@ void NodeController:: tryTree()
 
 void NodeController::tryGraph()
 {
+    CTECGraph<int> testGraph;
     
+    testGraph.addVertex(7);
+    testGraph.depthFirstTraversal(testGraph, 0);
 }
 
 void NodeController:: doMergesort()

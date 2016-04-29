@@ -13,6 +13,7 @@
 #include <set>
 
 
+
 template <class Type>
 class CTECGraph
 {
@@ -32,7 +33,7 @@ public:
     void removeEdge(int source,int taget);
     Type& operator [] (int vertex);//change value
     Type operator [] (int vertex) const;//copy value
-    int size();
+    int size() const;
     bool isEdge(int source, int target) const;
     std::set<int> neighbors(int vertex) const;
     void depthFirstTraversal(CTECGraph<Type> currentGraph,int vertex);
