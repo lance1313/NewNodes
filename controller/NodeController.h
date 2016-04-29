@@ -17,7 +17,7 @@
 #include "../model/CTECList.h"
 #include "../model/CTECList.cpp"
 #include "../Model/CTECBinaryTree.cpp"
-#include "../Model/CTECGraph.hpp"
+#include "../Model/CTECGraph.cpp"
 
 using namespace std;
 

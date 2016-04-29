@@ -8,6 +8,7 @@
 #include "NodeController.h"
 #include <stdlib.h>// allows accesss to rand() function for random #
 #include <iostream>
+#include "../Model/CTECGraph.hpp"
 
 
 using namespace std;
@@ -42,7 +43,7 @@ void NodeController :: start()
 	}
 	arrayTimer.stopTimer();
 	arrayTimer.displayTimerInformation();
-    tryTree();
+    tryGraph();
 }
 
 
@@ -76,7 +77,19 @@ void NodeController::tryGraph()
     CTECGraph<int> testGraph;
     
     testGraph.addVertex(7);
+    testGraph.addVertex(8);
+    testGraph.addVertex(9);
+    testGraph.addVertex(78);
+    testGraph.addVertex(87);
+    testGraph.addVertex(74);
+    testGraph.addVertex(722);
+    testGraph.addVertex(713);
+    testGraph.addVertex(70);
+    testGraph.addVertex(90);
+    
     testGraph.depthFirstTraversal(testGraph, 0);
+    
+    testGraph.breadthFirstTraversal(testGraph, 0);
 }
 
 void NodeController:: doMergesort()
