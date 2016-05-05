@@ -14,7 +14,7 @@
 using namespace std;
 
 template <class Type>
-class CTECHashTable<Type>:: CTECHashTable()
+ CTECHashTable<Type> :: CTECHashTable()
 {
     this->size = 0;
     this->capacity = 101;
@@ -22,3 +22,16 @@ class CTECHashTable<Type>:: CTECHashTable()
     this->internalStora = new Type[capacity];
     
 }
+
+template <class Type>
+CTECHashTable<Type>:: ~CTECHashTable()
+{
+    delete [] internalStorage;
+}
+
+template <class Type>
+int CTECHashTable<Type>:: getSize()
+{
+    return this->size;
+}
+
