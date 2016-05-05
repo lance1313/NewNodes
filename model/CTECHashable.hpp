@@ -9,10 +9,8 @@
 #ifndef CTECHashTable_hpp
 #define CTECHashTable_hpp
 
-#include <stdio.h>
-
 template <class Type>
-class CTECHashTable
+class CTECHashable
 {
 private:
     

@@ -7,7 +7,6 @@
 //
 
 #include "CTECHashTable.hpp"
-
 #include<iostream>
 
 
@@ -20,5 +19,5 @@ class CTECHashTable<Type>:: CTECHashTable()
     this->capacity = 101;
     this->efficiencyPercentage = .667;
     this->internalStora = new Type[capacity];
-    
+
 }
