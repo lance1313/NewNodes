@@ -22,7 +22,7 @@ private:
     double efficiencyPercentage;
     int findPosition(HashNode<Type> value);
     int handleCollision(HashNode<Type> value);
-    void updateSize();
+    void updateCapacity();
     
     
 public:

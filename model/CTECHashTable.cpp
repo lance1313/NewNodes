@@ -58,7 +58,7 @@ void CTECHashTable<Type>:: add(HashNode<Type> currentNode)
         //resize if needed.
         if(size/capacity >= this->efficiencyPercentage)
         {
-            updateSize();
+            updateCapacity();
         }
         int insertionIndex = findPosition(currentNode);
         
@@ -74,8 +74,23 @@ void CTECHashTable<Type>:: add(HashNode<Type> currentNode)
     }
 }
 
+/*
+ *finds the simplest hash for thr associated key pair.
+ *using modulo of the key by the capacity.
+ */
+ 
 
-
+template <class Type>
+int CTECHashTable<Type>:: findPosition(HashNode<Type> currentNode)
+{
+    int position = 0;
+    
+    position = currentNode->getKey % capacity;
+    
+    
+    return  position;
+    
+}
 
 
 
