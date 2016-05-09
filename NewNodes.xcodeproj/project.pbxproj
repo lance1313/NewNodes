@@ -18,6 +18,7 @@
 		03C8BA2B1CCE8FE60001BA59 /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BA291CCE8FE60001BA59 /* CTECGraph.cpp */; };
 		03E58C6B1CBC1D2D00CC4E96 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E58C691CBC1D2D00CC4E96 /* TreeNode.cpp */; };
 		03E58C6E1CBC2D9600CC4E96 /* CTECBinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03E58C6C1CBC2D9600CC4E96 /* CTECBinaryTree.cpp */; };
+		03F064891CE106AC005DA2B9 /* HashNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03F064871CE106AC005DA2B9 /* HashNode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,8 @@
 		03E58C6A1CBC1D2D00CC4E96 /* TreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
 		03E58C6C1CBC2D9600CC4E96 /* CTECBinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTECBinaryTree.cpp; sourceTree = "<group>"; };
 		03E58C6D1CBC2D9600CC4E96 /* CTECBinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTECBinaryTree.hpp; sourceTree = "<group>"; };
+		03F064871CE106AC005DA2B9 /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashNode.cpp; sourceTree = "<group>"; };
+		03F064881CE106AC005DA2B9 /* HashNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashNode.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				03C8BA2A1CCE8FE60001BA59 /* CTECGraph.hpp */,
 				03C1E73D1CDBC73800BFFB9B /* CTECHashTable.cpp */,
 				03C1E73E1CDBC73800BFFB9B /* CTECHashTable.hpp */,
+				03F064871CE106AC005DA2B9 /* HashNode.cpp */,
+				03F064881CE106AC005DA2B9 /* HashNode.hpp */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				03E58C6E1CBC2D9600CC4E96 /* CTECBinaryTree.cpp in Sources */,
 				032024841C99DC0000250205 /* CTECList.cpp in Sources */,
 				032024831C99DC0000250205 /* CTECArray.cpp in Sources */,
+				03F064891CE106AC005DA2B9 /* HashNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
