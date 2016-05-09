@@ -169,4 +169,26 @@ void CTECHashTable<Type>:: updateCapacity()
     
 }
 
+template <class Type>
+bool CTECHashTable<Type>:: remove(HashNode<Type> currentNode)
+{
+    
+}
 
+template <class Type>
+bool CTECHashTable<Type>:: contains(HashNode<Type> currentNode)
+{
+    bool isInTable = false;
+    int possibleLocation = findPosition(currentNode);
+    
+    while(internalStorage[possibleLocation] != nullptr && !isInTable)
+    {
+        if(internalStorage[possibleLocation].getValue() == currentNode.getValue())
+        {
+            isInTable = true;
+        }
+        possibleLocation = (possibleLocation) + 1 % capacity;
+    }
+    
+    return  isInTable;
+}
