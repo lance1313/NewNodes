@@ -24,10 +24,14 @@ private:
     int handleCollision(HashNode<Type> value);
     void updateCapacity();
     
+    int getNextPrime();
+    bool isPrime(int candidateNumber);
     
 public:
     CTECHashTable();
     ~CTECHashTable();
+    
+    
     
     void add(HashNode<Type> value);
     bool remove(HashNode<Type> value);
