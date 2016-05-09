@@ -19,7 +19,7 @@ template <class Type>
     this->size = 0;
     this->capacity = 101;
     this->efficiencyPercentage = .667;
-    this->internalStorage = new Type[capacity];
+    this->internalStorage = new HashNode<Type>[capacity];
     
 }
 /*
@@ -51,16 +51,16 @@ int CTECHashTable<Type>:: getSize()
  */
  
 template <class Type>
-void CTECHashTable<Type>:: add(const Type& value)
+void CTECHashTable<Type>:: add(HashNode<Type> currentNode)
 {
-    if(!contains(value))
+    if(!contains(currentNode))
     {
         //resize if needed.
         if(size/capacity >= this->efficiencyPercentage)
         {
             updateSize();
         }
-        int insertionIndex = findPosition(value);
+        int insertionIndex = findPosition(currentNode);
         
         if(internalStorage[insertionIndex] != nullptr)
         {
@@ -69,7 +69,7 @@ void CTECHashTable<Type>:: add(const Type& value)
                 insertionIndex = (insertionIndex + 1) % capacity;
             }
         }
-        internalStorage[insertionIndex] = value;
+        internalStorage[insertionIndex] = currentNode;
         size++;
     }
 }
