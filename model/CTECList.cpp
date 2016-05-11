@@ -310,7 +310,7 @@ void CTECList<Type>::addToIndex(int index,const Type& value)
 
 }
 
-
+//switches data in one spot for another.
 template <class Type>
 void CTECList<Type>:: swap(int indexOne, int indexTwo)
 {
@@ -343,7 +343,7 @@ void CTECList<Type>:: selectionSort()
     }
 }
 
-
+//used to find size of list
 template <class Type>
 void CTECList<Type> :: calculateSize()
 {

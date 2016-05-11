@@ -37,38 +37,38 @@ TreeNode<Type> :: TreeNode() : Node<Type>()
         this->parent = parent;
     }
     
-
+// method used in all TreeNode strutures
     template <class Type>
     void TreeNode<Type> :: setLeftChild(TreeNode<Type> * leftChild)
     {
         this->leftChild = leftChild;
     }
-    
+    // method used in all TreeNode strutures
     template <class Type>
     void TreeNode<Type> :: setRightChild(TreeNode<Type> * rightChild)
     {
         this->rightChild = rightChild;
     }
     
-    
+    // method used in all TreeNode strutures
     template <class Type>
     void TreeNode<Type> :: setParent(TreeNode<Type> * parent)
     {
         parent->value;
     }
-    
+    // method used in all TreeNode strutures
     template <class Type>
     TreeNode<Type> * TreeNode<Type>:: getLeftChild()
     {
         return leftChild;
     }
-    
+    // method used in all TreeNode strutures
     template <class Type>
     TreeNode<Type> *  TreeNode<Type>:: getRightChild()
     {
         return rightChild;
     }
-    
+    // method used in all TreeNode strutures
     template <class Type>
     TreeNode<Type> *
 TreeNode<Type> :: getParent()

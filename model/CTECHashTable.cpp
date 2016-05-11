@@ -21,6 +21,10 @@ template <class Type>
     this->efficiencyPercentage = .667;
     this->internalStorage = new HashNode<Type>[capacity];
     
+    this->chaindedSize = 0;
+    this->chainedCapacity = 101;
+    this->chainedStorage = new CTECList<HashNode<Type>>[chainedCapacity];
+    
 }
 /*
  *deallocates all memory attched to the internal strogare.
@@ -30,6 +34,7 @@ template <class Type>
 CTECHashTable<Type>:: ~CTECHashTable()
 {
     delete [] internalStorage;
+    delete [] chainedStorage;
 }
 
 /*
@@ -42,6 +47,29 @@ template <class Type>
 int CTECHashTable<Type>:: getSize()
 {
     return this->size;
+}
+
+template <class Type>
+void CTECHashTable<Type> ::  addChained(HashNode<Type> currentNode)
+{
+    if((chainedSize/chainedCapacity) >= efficiencyPercentage)
+    {
+        updateChainedCapacity();
+    }
+    
+    if(chainedStorage[insertionIndex] != nullptr)
+    {
+        CTECList<HashNode<Type>> temp = chainedStorage[insertionIndex];
+        temp.addEnd(currentNode);
+    }
+    
+    else
+    {
+        CTECList<HashNode<Type>> tempList;
+        tempList.addEnd(currentNode);
+        chainedStorage[insertionIndex = tempList];
+    }
+    chainedSize++;
 }
 
 /*
@@ -64,6 +92,8 @@ void CTECHashTable<Type>:: add(HashNode<Type> currentNode)
         
         if(internalStorage[insertionIndex] != nullptr)
         {
+            insertionIndex = handleCollision(currentNode);
+            
             while(internalStorage[insertionIndex] != nullptr)
             {
                 insertionIndex = (insertionIndex + 1) % capacity;
@@ -173,6 +203,29 @@ template <class Type>
 bool CTECHashTable<Type>:: remove(HashNode<Type> currentNode)
 {
     
+    bool hasBeenRemoved = false;
+    if(contains(currentNode))
+    {
+        int possibleLocation = findPosition(currentNode);
+        
+        while(internalStorage[possibleLocation] != nullptr && !hasBeenRemoved)
+        {
+            if(internalStorage[possibleLocation].getValue() == currentNode.getValue())
+            {
+                hasBeenRemoved = true;
+                internalStorage[possibleLocation] = nullptr;
+            }
+            possibleLocation = (possibleLocation) + 1 % capacity;
+        }
+    }
+    
+    
+    
+    
+    
+    return  hasBeenRemoved;
+    
+    
 }
 
 template <class Type>
@@ -192,3 +245,20 @@ bool CTECHashTable<Type>:: contains(HashNode<Type> currentNode)
     
     return  isInTable;
 }
+
+template <class Type>
+int CTECHashTable<Type>:: handleCollision(HashNode<Type> currentNode)
+{
+    int updatedPosition = findPosition(currentNode);
+    //use to be able to find value again
+    updatedPosition = ( 47 + ( updatedPosition * updatedPosition)) %capacity;
+    
+    
+    
+    
+    return updatedPosition;
+    
+}
+
+
+

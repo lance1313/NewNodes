@@ -82,6 +82,7 @@ int CTECArray<Type> ::  getSize()
 {
 	return this->size;
 }
+//this gives a spot in the array a value.
 template <class Type>
 void CTECArray<Type> ::  set(int position,const Type& value)
 {
@@ -134,7 +135,7 @@ int CTECArray<Type> :: indexOf(Type searchValue)
     }
        return indexNotFound;
 }
-
+//gets the start point
 template <class Type>
 int CTECArray<Type> :: nextIndexOf(int startingIndex,Type searchValue)
 {
@@ -165,7 +166,7 @@ int CTECArray<Type> :: nextIndexOf(int startingIndex,Type searchValue)
     
     return indexNotFound;
 }
-
+// method to use in sorting method
 template <class Type>
 void CTECArray<Type>:: swap(int indexOne, int indexTwo)
 {
@@ -174,7 +175,7 @@ void CTECArray<Type>:: swap(int indexOne, int indexTwo)
     set(indexOne, get(indexTwo));
     set(indexTwo, temp);
 }
-
+// method to sort array
 template <class Type>
 void CTECArray<Type>:: selectionSort()
 {

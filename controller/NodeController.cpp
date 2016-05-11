@@ -52,7 +52,10 @@ NodeController::~NodeController()
 
 
 }
-
+/**
+ this is the method to try out  binary tree class.
+ 
+ */
 void NodeController:: tryTree()
 {
     CTECBinaryTree<int> firstTree;
@@ -71,7 +74,10 @@ void NodeController:: tryTree()
     cout <<"\nLet's look at the tree." << endl;
     firstTree.postorderTraversal(firstTree.getRoot());
 }
-
+/*
+ method to try out graph struture
+ 
+ */
 void NodeController::tryGraph()
 {
     CTECGraph<int> testGraph;
@@ -91,7 +97,10 @@ void NodeController::tryGraph()
     
     testGraph.breadthFirstTraversal(testGraph, 0);
 }
-
+/*
+ 
+ method with actual code helers are merge and merge sort
+ */
 void NodeController:: doMergesort()
 {
     mergeData = new int[500000];
@@ -121,7 +130,9 @@ void NodeController:: doMergesort()
 }
 
 
-
+/*
+ method to  run the merge sort on arrays
+ */
 void NodeController:: mergesort(int data[], int size)
 {
     int sizeOne;
@@ -189,7 +200,7 @@ void NodeController :: testLists()
     
     cout << "Head should be 3 and is: " << numbers->getFront() << endl;
 }
-
+//method for quick sorting any array.
 void NodeController::quicksort(int first, int last)
 {
     int pivotIndex;
@@ -200,7 +211,7 @@ void NodeController::quicksort(int first, int last)
         quicksort(pivotIndex+1, last);
     }
 }
-
+// use to put space for array.
 int NodeController::partition(int first, int last)
 {
     
@@ -224,7 +235,7 @@ int NodeController::partition(int first, int last)
     return smallIndex;
     
 }
-
+//used to swap data
 void NodeController:: swap(int first, int last)
 {
     int temp = mergeData[first];
@@ -232,7 +243,7 @@ void NodeController:: swap(int first, int last)
     mergeData[last] = temp;
 }
 
-
+//used to help quick sort
 void NodeController:: doQuick()
 {
     mergeData = new int[1000000000];
@@ -256,14 +267,14 @@ void NodeController:: doQuick()
     
 }
 
-
+/*
+ Create a CtecList and array fill them with stuff(numbers)
+ start timer , sort stop timer, display info for list
+ start timer , sort stop timer, display info for array
+ */
 void NodeController :: sortData()
 {
-    /*
-     Create a CtecList and array fill them with stuff(numbers)
-     start timer , sort stop timer, display info for list
-      start timer , sort stop timer, display info for array
-     */
+    
     CTECArray<int> randomNumberArray(5000);
     CTECList<int> randomNumberList;
     int myCPlusPlusArray[5000];
