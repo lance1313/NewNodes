@@ -8,6 +8,11 @@
 
 #include "HashNode.hpp"
 using namespace CTECData;
+template <class Type>
+HashNode<Type>:: HashNode()
+{
+    
+}
 
 template <class Type>
 HashNode<Type>:: HashNode(int key, const Type& value)

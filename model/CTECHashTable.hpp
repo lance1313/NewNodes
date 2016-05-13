@@ -9,7 +9,7 @@
 #ifndef CTECHashTable_hpp
 #define CTECHashTable_hpp
 #include "HashNode.cpp"
-#include "CTECList.cpp"
+#include "CTECList.h"
 
 
 template <class Type>
@@ -19,14 +19,16 @@ private:
     
     int size;
     int capacity;
-    HashNode<Type> * internalStorage;
+    HashNode<Type> ** internalStorage;
     
     
     int chainedCapacity;
     int chainedSize;
     CTECList<HashNode<Type>> * chainedStorage;
     void updateChainedCapacity();
+    
     double efficiencyPercentage;
+    
     int findPosition(HashNode<Type> currentNode);
     int handleCollision(HashNode<Type> currentNode);
     void updateCapacity();

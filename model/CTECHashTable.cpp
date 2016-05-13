@@ -19,7 +19,7 @@ template <class Type>
     this->size = 0;
     this->capacity = 101;
     this->efficiencyPercentage = .667;
-    this->internalStorage = new HashNode<Type>[capacity];
+    this->internalStorage = new HashNode<Type>*[capacity];
     
     this->chaindedSize = 0;
     this->chainedCapacity = 101;
@@ -100,7 +100,7 @@ void CTECHashTable<Type>:: add(HashNode<Type> currentNode)
                 insertionIndex = (insertionIndex + 1) % capacity;
             }
         }
-        internalStorage[insertionIndex] = currentNode;
+        internalStorage[insertionIndex] = &currentNode;
         size++;
     }
 }
@@ -220,13 +220,13 @@ void CTECHashTable<Type>:: updateCapacity()
     int oldCapacity = capacity;
     capacity = updatedCapacity;
     
-    HashNode<Type> * largerStorage = new HashNode<Type>[capacity];
+    HashNode<Type> ** largerStorage = new HashNode<Type>*[capacity];
     
     for(int index =0; index < oldCapacity; index++)
     {
         if(internalStorage[index] != nullptr)
         {
-            int updatedIndex = findPosition(internalStorage[index]);
+            int updatedIndex = findPosition(*internalStorage[index]);
             largerStorage[updatedIndex] = internalStorage[index];
         }
         
@@ -275,7 +275,7 @@ bool CTECHashTable<Type>:: contains(HashNode<Type> currentNode)
     
     while(internalStorage[possibleLocation] != nullptr && !isInTable)
     {
-        if(internalStorage[possibleLocation].getValue() == currentNode.getValue())
+        if(internalStorage[possibleLocation]->getValue() == currentNode->getValue())
         {
             isInTable = true;
         }

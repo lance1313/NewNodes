@@ -43,7 +43,7 @@ void NodeController :: start()
 	}
 	arrayTimer.stopTimer();
 	arrayTimer.displayTimerInformation();
-    tryGraph();
+    //tryGraph();
 }
 
 
@@ -74,6 +74,31 @@ void NodeController:: tryTree()
     cout <<"\nLet's look at the tree." << endl;
     firstTree.postorderTraversal(firstTree.getRoot());
 }
+
+//void NodeController::testHashTable()
+//{
+//    CTECHashTable<int> tempTable;
+//    HashNode<int> tempArray[10];
+//    for(int spot = 0; spot < 10; spot++)
+//    {
+//        int randomValue  = rand();
+//        int randomKey = rand();
+//        HashNode<int> temp = HashNode<int>(randomKey, randomValue);
+//        tempTable.add(temp);
+//        tempArray[spot] = temp;
+//    }
+//    bool test = tempTable.contains(tempArray[13]);
+//    string result;
+//    if(test)
+//    {
+//        result = "It's in the hash table!";
+//    }
+//    else
+//    {
+//        result = "Can't find value:(";
+//    }
+//    cout << result << endl;
+//}
 /*
  method to try out graph struture
  
