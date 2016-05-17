@@ -21,7 +21,7 @@ template <class Type>
     this->efficiencyPercentage = .667;
     this->internalStorage = new HashNode<Type>*[capacity];
     
-    this->chaindedSize = 0;
+    this->chainedSize = 0;
     this->chainedCapacity = 101;
     this->chainedStorage = new CTECList<HashNode<Type>>[chainedCapacity];
     
@@ -116,7 +116,7 @@ int CTECHashTable<Type>:: findPosition(HashNode<Type> currentNode)
 {
     int position = 0;
     
-    position = currentNode->getKey % capacity;
+    position = currentNode.getKey() % capacity;
     
     
     return  position;
@@ -275,7 +275,7 @@ bool CTECHashTable<Type>:: contains(HashNode<Type> currentNode)
     
     while(internalStorage[possibleLocation] != nullptr && !isInTable)
     {
-        if(internalStorage[possibleLocation]->getValue() == currentNode->getValue())
+        if(internalStorage[possibleLocation]->getValue() == currentNode.getValue())
         {
             isInTable = true;
         }

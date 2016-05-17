@@ -44,6 +44,7 @@ void NodeController :: start()
 	arrayTimer.stopTimer();
 	arrayTimer.displayTimerInformation();
     //tryGraph();
+    testHashTable();
 }
 
 
@@ -75,30 +76,49 @@ void NodeController:: tryTree()
     firstTree.postorderTraversal(firstTree.getRoot());
 }
 
-//void NodeController::testHashTable()
-//{
-//    CTECHashTable<int> tempTable;
-//    HashNode<int> tempArray[10];
-//    for(int spot = 0; spot < 10; spot++)
-//    {
-//        int randomValue  = rand();
-//        int randomKey = rand();
-//        HashNode<int> temp = HashNode<int>(randomKey, randomValue);
-//        tempTable.add(temp);
-//        tempArray[spot] = temp;
-//    }
-//    bool test = tempTable.contains(tempArray[13]);
-//    string result;
-//    if(test)
-//    {
-//        result = "It's in the hash table!";
-//    }
-//    else
-//    {
-//        result = "Can't find value:(";
-//    }
-//    cout << result << endl;
-//}
+void NodeController::testHashTable()
+{
+    CTECHashTable<int> tempTable;
+    HashNode<int> tempArray[10];
+    for(int spot = 0; spot < 10; spot++)
+    {
+        int randomValue  = rand();
+        int randomKey = rand();
+        int randomValue2  = rand();
+        int randomKey2 = rand();
+        
+        int randomValue3  = rand();
+        int randomKey3 = rand();
+        int randomValue4  = rand();
+        int randomKey4 = rand();
+        HashNode<int> temp = HashNode<int>(randomKey, randomValue);
+        HashNode<int> temp2 = HashNode<int>(randomKey2, randomValue2);
+        HashNode<int> temp3 = HashNode<int>(randomKey3, randomValue3);
+        HashNode<int> temp4 = HashNode<int>(randomKey4, randomValue4);
+        tempTable.add(temp);
+        tempTable.add(temp2);
+        tempTable.add(temp3);
+        tempTable.add(temp4);
+        tempArray[spot] = temp;
+    }
+    //tempTable.add(0);
+    bool test = tempTable.contains(tempArray[9]);
+    tempTable.contains(tempArray[1]);
+    tempTable.contains(tempArray[5]);
+    tempTable.contains(tempArray[8]);
+    tempTable.contains(tempArray[6]);
+     tempTable.contains(tempArray[2]);
+    string result;
+    if(test)
+    {
+        result = "It's in the hash table!";
+    }
+    else
+    {
+        result = "Can't find value:(";
+    }
+    cout << result << endl;
+}
 /*
  method to try out graph struture
  
